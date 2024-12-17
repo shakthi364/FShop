@@ -220,6 +220,8 @@ public class Checkout extends HttpServlet {
             payhere.addProperty("cancel_url", "");
             payhere.addProperty("notify_url", "https://a0b1-2402-d000-a400-37f-b04e-d814-2ee5-8a46.ngrok-free.app/Fshop/VerifyPayment");
 
+            
+            System.out.println("ok");
             payhere.addProperty("first_name", user.getFirst_name());
             payhere.addProperty("last_name", user.getLast_name());
             payhere.addProperty("email", user.getEmail());
