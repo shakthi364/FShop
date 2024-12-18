@@ -4,24 +4,24 @@
  */
 
 // Payment completed. It can be a successful failure.
-payhere.onCompleted = function onCompleted(orderId) {
-    console.log("Payment completed. OrderID:" + orderId);
-    // Note: validate the payment and show success or failure page to the customer
-    console.log("Order Plase Complete");
-    window.location = "index.html"
-};
-
-// Payment window closed
-payhere.onDismissed = function onDismissed() {
-    // Note: Prompt user to pay again or show an error page
-    console.log("Payment dismissed");
-};
-
-// Error occurred
-payhere.onError = function onError(error) {
-    // Note: show an error page
-    console.log("Error:" + error);
-};
+//payhere.onCompleted = function onCompleted(orderId) {
+//    console.log("Payment completed. OrderID:" + orderId);
+//    // Note: validate the payment and show success or failure page to the customer
+//    console.log("Order Plase Complete");
+//    window.location = "index.html"
+//};
+//
+//// Payment window closed
+//payhere.onDismissed = function onDismissed() {
+//    // Note: Prompt user to pay again or show an error page
+//    console.log("Payment dismissed");
+//};
+//
+//// Error occurred
+//payhere.onError = function onError(error) {
+//    // Note: show an error page
+//    console.log("Error:" + error);
+//};
 
 // Dropdown Wrapper Elements
 const dropdownWrapper = document.querySelector('.dropdown-wrapper');
@@ -46,6 +46,7 @@ let item_count;
 let shipping;
 
 async function loadData() {
+    console.log("check")
     const response = await fetch("LoadCheckout");
 
     if (response.ok) {
@@ -67,11 +68,6 @@ async function loadData() {
                 let first_name = document.getElementById("first_name");
                 let last_name = document.getElementById("last_name");
                 let email = document.getElementById("email");
-                let mobile = document.getElementById("mobile");
-                let address1 = document.getElementById("address1");
-                let address2 = document.getElementById("address2");
-                let postal_code = document.getElementById("postal_code");
-                let city = document.getElementById("city");
 
                 if (currentAddressCheckBox.checked) {
                     first_name.value = address.fname;

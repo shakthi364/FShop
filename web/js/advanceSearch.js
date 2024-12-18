@@ -155,6 +155,11 @@ function updateProductViwe(json) {
                 "en-US", {
                     minimumFractionDigits: 2
                 }).format((product.price * 5 / 100) + product.price);
+                
+                product_div_clone.querySelector("#product_link_cart").addEventListener("click", (e)=>{
+                    addToCart(product.id,1);
+                    e.preventDefault();
+                });
 
         product_conteiner_div.appendChild(product_div_clone);
     });
@@ -209,6 +214,26 @@ function updateProductViwe(json) {
         pagination_container.appendChild(pagination_button_clone_next);
 
     }
+}
+async  function addToCart(id, qty) {
+//    console.log("add to cart: " + id);
+//    console.log("add to qty: " + qty);
 
+    const responce = await fetch(
+            "AddToCart?id=" + id + "&qty=" + qty
+            );
 
+    if (responce.ok) {
+
+        const json = await responce.json();
+
+        if (json.success) {
+            notyf.success(json.content);
+        } else {
+            notyf.error(json.content);
+        }
+
+    } else {
+        notyf.error("Unable to process your request.");
+    }
 }

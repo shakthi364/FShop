@@ -73,17 +73,17 @@ public class SignUp extends HttpServlet {
                 user.setPassword(userDTO.getPassword());
                 user.setVarification(String.valueOf(code));
 
-//                Thread sendMailThread = new Thread() {
-//                    @Override
-//                    public void run() {
-//
-//                        Mail.sendMail(user.getEmail(), "Fshop Verification",
-//                                "<h1 style=\"color:#6482AD;\">Your Verification Code:" + user.getVarification() + "</h1>");
-//                    }
-//
-//                };
+                Thread sendMailThread = new Thread() {
+                    @Override
+                    public void run() {
 
-//                sendMailThread.start();
+                        Mail.sendMail(user.getEmail(), "Fshop Verification",
+                                "<h1 style=\"color:#6482AD;\">Your Verification Code:" + user.getVarification() + "</h1>");
+                    }
+
+                };
+
+                sendMailThread.start();
                 
                 sesstin.save(user);
                 sesstin.beginTransaction().commit();

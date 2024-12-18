@@ -3,9 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/src/java/model/PayHere.java</file>
             <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/src/java/controler/Checkout.java</file>
+            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/web/js/single-product.js</file>
+            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/web/myAccount.html</file>
+            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/web/js/userUpdateProfile.js</file>
             <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/web/checkout.html</file>
+            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/src/java/controler/SignUp.java</file>
+            <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/src/java/controler/SignIn.java</file>
             <file>file:/C:/Users/Shakthi/OneDrive/Documents/NetBeansProjects/Fshop/web/js/checkuot.js</file>
         </group>
     </open-files>

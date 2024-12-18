@@ -102,6 +102,17 @@
 
 })(jQuery);
 
+document.addEventListener("DOMContentLoaded", () => {
+    const links = document.querySelectorAll('a[data-section]');
+    links.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault(); // Prevent default link behavior
+            const sectionId = link.getAttribute('data-section');
+            showSection(sectionId);
+        });
+    });
+});
+
 function showSection(sectionId) {
     document.querySelectorAll('.section').forEach(section => {
         section.classList.remove('active');
@@ -153,6 +164,25 @@ rangeInput.forEach(input => {
             priceInput[1].value = maxVal;
             range.style.left = ((minVal / rangeInput[0].max) * 100) + "%";
             range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+        }
+    });
+});
+
+///////// user menu
+document.addEventListener("DOMContentLoaded", function () {
+    const userIcon = document.getElementById("userIcon");
+    const menuDropdown = document.getElementById("menuDropdown");
+
+    // Toggle dropdown visibility on userIcon click
+    userIcon.addEventListener("click", function (event) {
+        event.preventDefault(); // Prevent default anchor behavior
+        menuDropdown.classList.toggle("hidden");
+    });
+
+    // Hide dropdown if clicking outside
+    document.addEventListener("click", function (event) {
+        if (!menuDropdown.contains(event.target) && !userIcon.contains(event.target)) {
+            menuDropdown.classList.add("hidden");
         }
     });
 });

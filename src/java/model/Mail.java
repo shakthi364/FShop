@@ -19,7 +19,7 @@ import javax.mail.internet.MimeMessage;
  */
 public class Mail {
     private static final String APP_EMAIL = "binarafernando365@gmail.com";
-    private static final String APP_PASSWORD = "osdvflluxckguaua";
+    private static final String APP_PASSWORD = "meixgqgyvkgfjjty";
 
     public static void sendMail(String email, String subject, String htmlContent) {
 

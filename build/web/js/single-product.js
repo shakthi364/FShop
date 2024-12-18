@@ -15,6 +15,7 @@ async function loadProduct() {
 
     if (parameters.has("id")) {
         const productId = parameters.get("id");
+        
         const response = await fetch("LoadSingleProduct?id=" + productId);
 
         if (response.ok) {
@@ -61,6 +62,7 @@ async function loadProduct() {
                 productClouneHtml.querySelector("#similar-product-title").innerHTML = item.title;
                 productClouneHtml.querySelector("#similar-product-a1").href = "detail.html?id=" + item.id;
                 productClouneHtml.querySelector("#similar-product-a2").href = "detail.html?id=" + item.id;
+                productClouneHtml.querySelector("#similar-product-a2").href = "detail.html?id=" + item.id;
                 productClouneHtml.querySelector("#similar-product-price").innerHTML = new Intl.NumberFormat(
                         "en-US", {
                             minimumFractionDigits: 2
@@ -76,7 +78,6 @@ async function loadProduct() {
                     addToCart(item.id, 1);
                     e.preventDefault();
                 });
-
                 document.getElementById("similar-product-main").appendChild(productClouneHtml);
 
             });
@@ -112,8 +113,6 @@ async  function addToCart(id, qty) {
     } else {
         notyf.error("Unable to process your request.");
     }
-
-
 }
 
 
